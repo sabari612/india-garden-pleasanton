@@ -470,8 +470,8 @@ a { text-decoration: none; }
 .faq-icon { color: var(--saffron); font-size: 1.1rem; flex-shrink: 0; }
 
 /* ===================== FOOTER ===================== */
-.footer { background: var(--ink2); padding: 4.5rem 4rem 2rem; color: rgba(255,255,255,0.7); }
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer { background: var(--ink2); padding: 4.5rem 4rem 0; color: rgba(255,255,255,0.7); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 2.5rem; }
 .footer-brand .footer-logo { height: 56px; margin-bottom: 0.75rem; }
 .footer-brand .logo-text { color: #fff; font-size: 1.2rem; display: block; margin-bottom: 0.2rem; }
 .footer-brand .logo-sub { color: rgba(255,255,255,0.4); }
@@ -490,13 +490,33 @@ a { text-decoration: none; }
 .footer-col ul li a { font-size: 0.83rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
 .footer-col ul li a:hover { color: #fff; }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.8rem;
-  text-align: center;
-  font-size: 0.75rem; color: rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 0 -4rem;
+  padding: 1.25rem 2rem 1.5rem;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
 }
-.footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
-.footer-bottom a:hover { color: var(--saffron); }
+.footer-bottom-divider { color: rgba(255,255,255,0.4); font-weight: 400; }
+.footer-bottom a.boons-link {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.footer-bottom a.boons-link:hover { opacity: 0.9; transform: translateY(-1px); }
+.footer-bottom .boons-logo {
+  height: 24px;
+  width: auto;
+  display: block;
+}
 
 /* ===================== STICKY CTA BAR ===================== */
 .sticky-bar {
@@ -515,7 +535,8 @@ a { text-decoration: none; }
   .sec, .booking-sec { padding: 4.5rem 2.5rem; }
   .hero, .about { padding: 5rem 2.5rem 3.5rem; gap: 3rem; }
   .info-strip { padding: 2rem 2.5rem; }
-  .footer { padding: 4rem 2.5rem 2rem; }
+  .footer { padding: 4rem 2.5rem 0; }
+  .footer-bottom { margin: 0 -2.5rem; }
   .nav { padding: 0 2rem; }
 }
 @media (max-width: 860px) {
@@ -1134,7 +1155,14 @@ a { text-decoration: none; }
     </div>
   </div>
   <div class="footer-bottom">
-    India Garden | All rights reserved | Powered by <a href="https://www.boons.io" target="_blank" rel="noopener">boons.io</a>
+    <span>India Garden</span>
+    <span class="footer-bottom-divider">|</span>
+    <span>All rights reserved</span>
+    <span class="footer-bottom-divider">|</span>
+    <span>Powered by</span>
+    <a href="https://www.boons.io/" target="_blank" rel="noopener" class="boons-link" aria-label="Powered by boons.io">
+      <img src="assets/boons-logo.png" alt="boons" class="boons-logo">
+    </a>
   </div>
 </footer>
 
