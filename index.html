@@ -64,14 +64,10 @@ a { text-decoration: none; }
 }
 .nav.scrolled { box-shadow: 0 4px 24px rgba(26,18,8,0.08); }
 .logo-wrap { display: flex; align-items: center; gap: 12px; }
-.logo-badge {
-  width: 44px; height: 44px;
-  background: var(--saffron);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem; font-weight: 700; color: #fff;
-  flex-shrink: 0;
+.logo-img {
+  height: 48px; width: auto;
+  display: block; flex-shrink: 0;
+  border-radius: 6px;
 }
 .logo-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); line-height: 1.1; }
 .logo-sub { font-size: 0.68rem; color: var(--gray); letter-spacing: 0.08em; font-weight: 400; }
@@ -91,6 +87,14 @@ a { text-decoration: none; }
   font-weight: 600 !important;
 }
 .nav-reserve:hover { background: var(--saffron-light) !important; }
+.nav-catering {
+  border: 1.5px solid var(--teal) !important;
+  color: var(--teal) !important;
+  padding: 0.45rem 1.1rem !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+}
+.nav-catering:hover { background: var(--teal-light) !important; }
 .nav-order {
   background: var(--saffron) !important;
   color: #fff !important;
@@ -468,6 +472,7 @@ a { text-decoration: none; }
 /* ===================== FOOTER ===================== */
 .footer { background: var(--ink2); padding: 4.5rem 4rem 2rem; color: rgba(255,255,255,0.7); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-brand .footer-logo { height: 56px; margin-bottom: 0.75rem; }
 .footer-brand .logo-text { color: #fff; font-size: 1.2rem; display: block; margin-bottom: 0.2rem; }
 .footer-brand .logo-sub { color: rgba(255,255,255,0.4); }
 .footer-brand p { font-size: 0.82rem; line-height: 1.85; margin-top: 1rem; color: rgba(255,255,255,0.45); max-width: 230px; }
@@ -486,11 +491,12 @@ a { text-decoration: none; }
 .footer-col ul li a:hover { color: #fff; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.8rem; display: flex;
-  justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 0.5rem;
+  padding-top: 1.8rem;
+  text-align: center;
   font-size: 0.75rem; color: rgba(255,255,255,0.3);
 }
+.footer-bottom a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.footer-bottom a:hover { color: var(--saffron); }
 
 /* ===================== STICKY CTA BAR ===================== */
 .sticky-bar {
@@ -550,13 +556,9 @@ a { text-decoration: none; }
 
 <!-- ===================== NAVIGATION ===================== -->
 <nav class="nav" id="mainNav">
-  <div class="logo-wrap">
-    <div class="logo-badge">IG</div>
-    <div>
-      <span class="logo-text">India Garden</span>
-      <div class="logo-sub">Pleasanton, California</div>
-    </div>
-  </div>
+  <a href="#home" class="logo-wrap">
+    <img src="assets/logo.png" alt="India Garden Pleasanton" class="logo-img">
+  </a>
   <nav class="nav-links">
     <a href="#about">Our Story</a>
     <a href="#menu">Menu</a>
@@ -564,6 +566,7 @@ a { text-decoration: none; }
     <a href="#gallery">Gallery</a>
     <a href="#faq">FAQ</a>
     <a href="#booking" class="nav-reserve">Reserve</a>
+    <a href="https://order.boons.io/site/catering/indian-garden/300/y" target="_blank" class="nav-catering">Catering</a>
     <a href="https://order.boons.io/site/indian-garden/300/y" target="_blank" class="nav-order">Order Online</a>
   </nav>
   <button class="nav-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
@@ -577,6 +580,7 @@ a { text-decoration: none; }
   <a href="#gallery">Gallery</a>
   <a href="#faq">FAQ</a>
   <a href="#booking">Reserve a Table</a>
+  <a href="https://order.boons.io/site/catering/indian-garden/300/y" target="_blank" style="color:var(--teal);font-weight:700">Catering →</a>
   <a href="https://order.boons.io/site/indian-garden/300/y" target="_blank" style="color:var(--saffron);font-weight:700">Order Online →</a>
 </div>
 
@@ -591,6 +595,7 @@ a { text-decoration: none; }
     <p class="hero-sub">From the clay tandoor to your table — North Indian cuisine made with tradition, passion, and the finest spices imported straight from India.</p>
     <div class="hero-btns">
       <a href="https://order.boons.io/site/indian-garden/300/y" target="_blank" class="btn-fill">Order Online →</a>
+      <a href="https://order.boons.io/site/catering/indian-garden/300/y" target="_blank" class="btn-stroke" style="border-color:var(--teal);color:var(--teal)">Catering →</a>
       <a href="#booking" class="btn-stroke">Book a Table</a>
     </div>
     <div class="hero-stats">
@@ -1086,8 +1091,7 @@ a { text-decoration: none; }
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <span class="logo-text">India Garden</span>
-      <div class="logo-sub">Pleasanton, California</div>
+      <img src="assets/logo.png" alt="India Garden Pleasanton" class="logo-img footer-logo">
       <p>Authentic North Indian cuisine made with heart. Dine-in, takeout, delivery, and catering — always crafted with tradition, love, and the freshest ingredients.</p>
       <div class="footer-social">
         <a href="https://www.facebook.com/indiagardenn/" target="_blank" class="fsoc" aria-label="Facebook">FB</a>
@@ -1130,15 +1134,15 @@ a { text-decoration: none; }
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 India Garden Pleasanton · All rights reserved</span>
-    <span>210 Rose Ave, Pleasanton, CA 94566 · (925) 485-4800</span>
+    India Garden | All rights reserved | Powered by <a href="https://www.boons.io" target="_blank" rel="noopener">boons.io</a>
   </div>
 </footer>
 
 <!-- ===================== STICKY BOTTOM BAR (mobile) ===================== -->
 <div class="sticky-bar" id="stickyBar">
-  <a href="https://order.boons.io/site/indian-garden/300/y" target="_blank" class="btn-fill" style="padding:0.7rem 1.5rem;font-size:0.82rem">🛵 Order Online</a>
-  <a href="#booking" class="btn-stroke" style="padding:0.7rem 1.5rem;font-size:0.82rem">📅 Reserve Table</a>
+  <a href="https://order.boons.io/site/indian-garden/300/y" target="_blank" class="btn-fill" style="padding:0.7rem 1.2rem;font-size:0.78rem">Order Online</a>
+  <a href="https://order.boons.io/site/catering/indian-garden/300/y" target="_blank" class="btn-stroke" style="padding:0.7rem 1.2rem;font-size:0.78rem;border-color:var(--teal);color:var(--teal)">Catering</a>
+  <a href="#booking" class="btn-stroke" style="padding:0.7rem 1.2rem;font-size:0.78rem">Reserve</a>
 </div>
 
 <!-- ===================== JAVASCRIPT ===================== -->
