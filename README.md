@@ -45,11 +45,34 @@ npx serve .
 
 Then visit `http://localhost:8000`.
 
-## Deploy
+## Deploy on Vercel
 
-This is a static site — deploy the project root to any static host (GitHub Pages, Netlify, Vercel, Cloudflare Pages, etc.). No build step required.
+This site is ready for Vercel — no build step required.
 
-For GitHub Pages: set the source to the `main` branch and root folder.
+### Option 1: Import from GitHub (recommended)
+
+1. Open [Import india-garden-pleasanton on Vercel](https://vercel.com/new/import?s=https%3A%2F%2Fgithub.com%2Fsabari612%2Findia-garden-pleasanton).
+2. Sign in with GitHub and authorize Vercel.
+3. Confirm these settings:
+   - **Framework Preset:** Other
+   - **Root Directory:** `./`
+   - **Build Command:** leave empty
+   - **Output Directory:** leave empty
+4. Click **Deploy**.
+
+Vercel will give you a live URL like `https://india-garden-pleasanton.vercel.app`. Future pushes to GitHub redeploy automatically.
+
+### Option 2: Vercel CLI
+
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
+
+## Other hosts
+
+This is a static site — you can also deploy to GitHub Pages, Netlify, or Cloudflare Pages with no build step.
 
 ## Restaurant info
 
